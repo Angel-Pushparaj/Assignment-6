@@ -1,0 +1,26 @@
+import java.util.*;
+class Main{
+static int maxSubarray(int[] arr, int n) {
+int res = arr[0];
+for (int i = 0; i < n; i++) {
+int currSum = 0;
+for (int j = i; j < n; j++) {
+currSum = currSum + arr[j];
+res = Math.max(res, currSum);
+}
+}
+return res;
+}
+public static void main(String[] args) {
+Scanner sc = new Scanner (System.in);
+System.out.print("Enter the size of the Array: ");
+int n=sc.nextInt();
+int[] arr = new int[n];
+System.out.print("Enter the Array elements: ");
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+}
+System.out.println("The Largest Maximum subarray Sum is: "+maxSubarray(arr,n));
+}
+}
